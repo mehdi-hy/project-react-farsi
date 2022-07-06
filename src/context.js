@@ -6,6 +6,8 @@ const AppContext = React.createContext();
 const defaultState = {
   modal: false,
   modalSave: false,
+  modalUpdate: false,
+  modalHistory: false,
   sideBar: false,
   sideBarCenter: false,
 };
@@ -32,6 +34,18 @@ const AppProvider = ({ children }) => {
   const closeModalSave = () => {
     dispatch({ type: 'CLOSE_MODAL_SAVE' });
   };
+  const openModalUpdate = () => {
+    dispatch({ type: 'OPEN_MODAL_UPDATE' });
+  };
+  const closeModalUpdate = () => {
+    dispatch({ type: 'CLOSE_MODAL_UPDATE' });
+  };
+  const openModalHistory = () => {
+    dispatch({ type: 'OPEN_MODAL_HISTORY' });
+  };
+  const closeModalHistory = () => {
+    dispatch({ type: 'CLOSE_MODAL_HISTORY' });
+  };
   return (
     <AppContext.Provider
       value={{
@@ -43,6 +57,10 @@ const AppProvider = ({ children }) => {
         openSideBarCenter,
         openModalSave,
         closeModalSave,
+        openModalUpdate,
+        closeModalUpdate,
+        openModalHistory,
+        closeModalHistory,
       }}
     >
       {children}
