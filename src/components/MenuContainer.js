@@ -70,15 +70,12 @@ const MenuContainer = () => {
               <div className='header-search'>
                 <form className='menu-search'>
                   <label htmlFor='' id='search' className='menu-search-label'>
-                    <p className='search-text'>جستوجو...</p>
-                    <span className='search-icon'>
-                      <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </span>
+                    جستجو...
                   </label>
                   <input
                     id='search'
-                    style={{ fontFamily: 'FontAwesome' }}
                     type='text'
+                    className='menu-search-input'
                   />
                 </form>
               </div>
